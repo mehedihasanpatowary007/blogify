@@ -50,7 +50,7 @@ function Categories({ blogs }) {
                 key={i}
                 onClick={() => toggleCategory(category)}
                 className={`bg-gray-300 px-3 py-1 rounded-full border-2  cursor-pointer ${
-                  selectedCategories.includes(category)
+                  selectedCategories.some((c) => c.toLowerCase() === category.toLowerCase())
                     ? "text-blue-500 border-blue-700 bg-white font-bold "
                     : "border-gray-700"
                 }`}

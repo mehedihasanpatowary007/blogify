@@ -13,8 +13,8 @@ function Filtered() {
     router.push(`?${params.toString().toLowerCase()}`);
   };
   return (
-    <div>
-      <select onChange={handleChange} value={currentSort} >
+    <div className="text-blue-500  font-semibold text-xl">
+      <select className="outline-none px-2 cursor-pointer" onChange={handleChange} value={currentSort} >
         <option value="newest">Newest</option>
         <option value="oldest">Oldest</option>
       </select>

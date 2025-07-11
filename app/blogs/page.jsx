@@ -9,7 +9,7 @@ async function Blogs({ searchParams }) {
   const blogs = getBlogs();
   const { order, category } = await searchParams;
 
-  const selectedCategories =  Array.isArray(category)
+  const selectedCategories = Array.isArray(category)
     ? category
     : category
     ? [category]
@@ -34,7 +34,11 @@ async function Blogs({ searchParams }) {
     <div className="grid grid-cols-12 gap-4">
       <div className=" col-span-8 px-4 py-10">
         <h1 className="text-4xl font-bold mb-8 text-center">All Blogs</h1>
-        <Filtered />
+        <div className="flex justify-end my-5">
+          <div className=" border-2 border-blue-500 px-5">
+            <Filtered />
+          </div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredBlogs.map((blog, i) => {
             const slug = slugify(blog.title);
